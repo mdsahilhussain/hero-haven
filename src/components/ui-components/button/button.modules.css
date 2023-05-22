@@ -1,0 +1,21 @@
+/* inspired form gumroad website */
+.button {
+  color: var(--tertiary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+  padding: 0.8em 2em;
+  background: var(--secondary-color);
+  transition: 0.2s;
+}
+
+.button:hover {
+  color: var(--secondary-color);
+  transform: translate(-0.25rem, -0.25rem);
+  background: var(--primary-color);
+  box-shadow: 0.25rem 0.25rem var(--secondary-color);
+}
+
+.button:active {
+  transform: translate(0);
+  box-shadow: none;
+}

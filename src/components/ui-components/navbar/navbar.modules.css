@@ -1,0 +1,26 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav > ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+nav > ul > li {
+  margin-right: 1em;
+  cursor: pointer;
+}
+
+nav > ul > li:last-child {
+  margin-right: 0;
+}
+
+.nav___button--controller {
+  display: flex;
+  align-items: center;
+}
