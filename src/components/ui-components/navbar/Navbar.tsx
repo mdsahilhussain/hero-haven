@@ -1,7 +1,8 @@
 import "./navbar.modules.css";
-import Button from "../../ui-components/button/Button";
+import { Button } from "../../ui-components/button/Button";
 import { IoNotificationsSharp, IoNotificationsOutline } from "react-icons/io5";
 const Navbar = () => {
+  const isMessage = true;
   return (
     <nav>
       <img src="" alt="logo-image" />
@@ -12,9 +13,11 @@ const Navbar = () => {
       </ul>
       <div className="nav___button--controller">
         <Button title="Explore" />
-        <IoNotificationsOutline
-          style={{ marginLeft: "0.5em", fontSize: "1.5rem" }}
-        />
+        {isMessage ? (
+          <IoNotificationsOutline className="bell" />
+        ) : (
+          <IoNotificationsSharp className="bell" />
+        )}
       </div>
     </nav>
   );

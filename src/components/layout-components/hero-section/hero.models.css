@@ -1,0 +1,97 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+
+.hero___imageStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.hero___headerImage {
+  position: relative;
+  height: 100%;
+  width: auto;
+}
+
+.hero___headerImage img,
+.hero___headerImage div {
+  position: absolute;
+}
+
+.hero___headerImage div {
+  background-color: var(--primary-color);
+}
+
+.hero___headerImage--rectangleOne,
+.hero___headerImage--rectangleTwo,
+.hero___headerImage--rectangleThree,
+.hero___headerImage--rectangleFour {
+  width: 6em;
+  height: 16em;
+}
+
+.hero___headerImage--rectangleOne {
+  left: 5vw;
+  top: 35vh;
+}
+
+.hero___headerImage--rectangleTwo {
+  top: 15vh;
+  left: calc(5vw + 6em);
+}
+
+.hero___headerImage--rectangleThree {
+  height: 14em !important;
+
+  right: 8vw;
+  top: 16vh;
+}
+
+.hero___headerImage--rectangleFour {
+  top: calc(16vh + 14em - 9em);
+  right: 8vw;
+
+  transform: rotate(90deg);
+}
+
+.hero___headerImage img {
+  width: 16em;
+  height: 9em;
+
+  transform: scale(1.2);
+  background-color: red;
+}
+
+.hero___headerTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 50%;
+}
+
+.hero___headerTitle h1,
+.hero___headerTitle h6 {
+  text-align: center;
+}
+
+.hero___headerTitle h1 {
+  line-height: 1;
+  width: 80%;
+}
+
+.hero___headerTitle h6 {
+  margin: 1rem 0 2.5em 0;
+  line-height: 2;
+}
+
+.hero___headerTitle--buttonController :first-child {
+  margin-right: 1em;
+}

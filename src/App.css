@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lato:wght@300;400;700&display=swap");
 
+/*? ================= Global style ================= */
 :root {
   --primary-color: #1f7a8c;
   --secondary-color: #022b3a;
@@ -33,17 +34,25 @@ p {
 }
 
 h1 {
-  font-size: 8rem;
+  font-size: 3rem;
   font-weight: 700;
 }
 
-.h1-big-variation {
+h1 > span {
+  font-size: 3.5rem;
+  color: var(--primary-color);
+
   font-family: "Kaushan Script", cursive;
 }
 
 h2 {
   font-size: 3rem;
   font-weight: 600;
+}
+
+h6 {
+  font-size: 0.8rem;
+  font-weight: 400;
 }
 
 p {
@@ -63,4 +72,41 @@ ul {
   list-style: none;
   color: unset;
   position: relative;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+/*? ================= animation style ================= */
+
+.bell:hover {
+  animation: bellRing 0.9s both;
+}
+
+@keyframes bellRing {
+  0%,
+  100% {
+    transform-origin: top;
+  }
+
+  15% {
+    transform: rotateZ(10deg);
+  }
+
+  30% {
+    transform: rotateZ(-10deg);
+  }
+
+  45% {
+    transform: rotateZ(5deg);
+  }
+
+  60% {
+    transform: rotateZ(-5deg);
+  }
+
+  75% {
+    transform: rotateZ(2deg);
+  }
 }
