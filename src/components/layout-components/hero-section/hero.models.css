@@ -39,23 +39,24 @@
 
 .hero___headerImage--rectangleOne {
   left: 5vw;
-  top: 35vh;
+  top: 25vh;
+  height: 20em;
 }
 
 .hero___headerImage--rectangleTwo {
-  top: 15vh;
-  left: calc(5vw + 6em);
+  top: 5vh;
+  left: calc(5vw + 5em);
 }
 
 .hero___headerImage--rectangleThree {
-  height: 14em !important;
+  height: 16em !important;
 
   right: 8vw;
   top: 16vh;
 }
 
 .hero___headerImage--rectangleFour {
-  top: calc(16vh + 14em - 9em);
+  top: calc(16vh + 16em - 9em);
   right: 8vw;
 
   transform: rotate(90deg);
@@ -64,9 +65,43 @@
 .hero___headerImage img {
   width: 16em;
   height: 9em;
-
-  transform: scale(1.2);
+  z-index: 9;
   background-color: red;
+}
+
+.hero___headerImage--imagesOne {
+  left: 1vw;
+  top: 10vh;
+}
+
+.hero___headerImage--imagesTwo {
+  transform: scale(0.7);
+  left: 8vw;
+  top: calc(14vh + 8em);
+}
+
+.hero___headerImage--imagesThree {
+  transform: scale(0.9);
+  left: 2vw;
+  top: calc(16vh + 16em);
+}
+
+.hero___headerImage--imagesFour {
+  transform: scale(0.9);
+  right: 2vw;
+  top: 5vh;
+}
+
+.hero___headerImage--imagesFive {
+  transform: scale(0.7);
+  right: 8vw;
+  top: calc(10vh + 8em);
+}
+
+.hero___headerImage--imagesSix {
+  transform: scale(0.9);
+  right: 2vw;
+  top: calc(14vh + 16em);
 }
 
 .hero___headerTitle {

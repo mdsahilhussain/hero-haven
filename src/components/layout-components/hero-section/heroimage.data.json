@@ -1,0 +1,67 @@
+[
+  {
+    "_id": 1,
+    "image_src": "../../../assets/image_1.jpg",
+    "image_alt": "ImageOne"
+  },
+  {
+    "_id": 2,
+    "image_src": "../../../assets/image_2.jpg",
+    "image_alt": "ImageTwo"
+  },
+  {
+    "_id": 3,
+    "image_src": "../../../assets/image_3.jpg",
+    "image_alt": "ImageThree"
+  },
+  {
+    "_id": 4,
+    "image_src": "../../../assets/image_4.jpg",
+    "image_alt": "ImageFour"
+  },
+  {
+    "_id": 5,
+    "image_src": "../../../assets/image_5.jpg",
+    "image_alt": "ImageFive"
+  },
+  {
+    "_id": 6,
+    "image_src": "../../../assets/image_6.jpg",
+    "image_alt": "ImageSix"
+  },
+  {
+    "_id": 7,
+    "image_src": "../../../assets/image_7.jpg",
+    "image_alt": "ImageSeven"
+  },
+  {
+    "_id": 8,
+    "image_src": "../../../assets/image_8.jpg",
+    "image_alt": "ImageEight"
+  },
+  {
+    "_id": 9,
+    "image_src": "../../../assets/image_9.jpg",
+    "image_alt": "ImageNine"
+  },
+  {
+    "_id": 10,
+    "image_src": "../../../assets/image_10.jpg",
+    "image_alt": "ImageTen"
+  },
+  {
+    "_id": 11,
+    "image_src": "../../../assets/image_11.jpg",
+    "image_alt": "ImageEleven"
+  },
+  {
+    "_id": 12,
+    "image_src": "../../../assets/image_12.jpg",
+    "image_alt": "ImageTwelve"
+  },
+  {
+    "_id": 13,
+    "image_src": "../../../assets/image_13.jpg",
+    "image_alt": "ImageThirteen"
+  }
+]
