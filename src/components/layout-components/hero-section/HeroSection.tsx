@@ -1,49 +1,101 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect } from "react";
 import "./hero.models.css";
 import { Button, CommunityButton } from "../../ui-components/button/Button";
 import FreeimageDataList from "./heroimage.data.json";
+
+import defaultImage from "../../../assets/image_4.jpg";
+
+interface ImageData {
+  _id: number;
+  image_src: string;
+  image_alt: string;
+}
+
 const HeroSection = () => {
-  const [imageOne, setImageOne] = useState<object | unknown>(null);
-  const [imageTwo, setImageTwo] = useState<object | unknown>(null);
-  const [imageThree, setImageThree] = useState<object | unknown>(null);
-  const [imageFour, setImageFour] = useState<object | unknown>(null);
-  const [imageFive, setImageFive] = useState<object | unknown>(null);
-  const [imageSix, setImageSix] = useState<object | unknown>(null);
+  const [imageOne, setImageOne] = useState<ImageData | any>();
+  const [imageTwo, setImageTwo] = useState<ImageData | any>();
+  const [imageThree, setImageThree] = useState<ImageData | any>();
+  const [imageFour, setImageFour] = useState<ImageData | any>();
+  const [imageFive, setImageFive] = useState<ImageData | any>();
+  const [imageSix, setImageSix] = useState<ImageData | any>();
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const randomNumber = Math.round(
-        Math.random() * (FreeimageDataList.length - 1)
-      );
+      const generatedNumbers: Array<number> = [];
+
+      while (generatedNumbers.length < 6) {
+        const randomNumber =
+          Math.floor(Math.random() * (FreeimageDataList.length - 1)) + 1;
+
+        if (!generatedNumbers.includes(randomNumber)) {
+          generatedNumbers.push(randomNumber);
+        }
+      }
+
+      const [
+        randomNum1,
+        randomNum2,
+        randomNum3,
+        randomNum4,
+        randomNum5,
+        randomNum6,
+      ] = generatedNumbers;
+
       setImageOne(
-        FreeimageDataList?.filter((data) => data?._id === randomNumber)
+        FreeimageDataList?.filter((data) => data?._id === randomNum1)[0]
       );
-    }, 5000);
+
+      setImageTwo(
+        FreeimageDataList?.filter((data) => data?._id === randomNum2)[0]
+      );
+      setImageThree(
+        FreeimageDataList?.filter((data) => data?._id === randomNum3)[0]
+      );
+      setImageFour(
+        FreeimageDataList?.filter((data) => data?._id === randomNum4)[0]
+      );
+      setImageFive(
+        FreeimageDataList?.filter((data) => data?._id === randomNum5)[0]
+      );
+      setImageSix(
+        FreeimageDataList?.filter((data) => data?._id === randomNum6)[0]
+      );
+    }, 2000);
 
     // Clean up the interval on unmount
     return () => clearInterval(interval);
   }, []);
 
-  console.log(imageOne);
+  console.log("imageOne", imageOne?.image_src);
   return (
     <header className="hero">
       <div className="hero___headerImage">
         <img
-          src={imageOne?.image_src}
+          src={
+            `https://drive.google.com/uc?export=view&id=${imageOne?.image_src}` ||
+            defaultImage
+          }
           className="hero___headerImage--imagesOne"
-          alt="imagesOne"
+          alt={imageOne?.image_alt}
         />
         <img
-          src={""}
+          src={
+            `https://drive.google.com/uc?export=view&id=${imageTwo?.image_src}` ||
+            defaultImage
+          }
           className="hero___headerImage--imagesTwo"
-          alt="imagesTwo"
+          alt={imageTwo?.image_alt}
         />
         <div className="hero___headerImage--rectangleOne"></div>
         <div className="hero___headerImage--rectangleTwo"></div>
         <img
-          src={""}
+          src={
+            `https://drive.google.com/uc?export=view&id=${imageThree?.image_src}` ||
+            defaultImage
+          }
           className="hero___headerImage--imagesThree"
-          alt="imagesThree"
+          alt={imageThree?.image_alt}
         />
       </div>
 
@@ -66,21 +118,30 @@ const HeroSection = () => {
 
       <div className="hero___headerImage">
         <img
-          src={""}
+          src={
+            `https://drive.google.com/uc?export=view&id=${imageFour?.image_src}` ||
+            defaultImage
+          }
           className="hero___headerImage--imagesFour"
-          alt="imagesFour"
+          alt={imageFour?.image_alt}
         />
         <img
-          src={""}
+          src={
+            `https://drive.google.com/uc?export=view&id=${imageFive?.image_src}` ||
+            defaultImage
+          }
           className="hero___headerImage--imagesFive"
-          alt="imagesFive"
+          alt={imageFive?.image_alt}
         />
         <div className="hero___headerImage--rectangleThree"></div>
         <div className="hero___headerImage--rectangleFour"></div>
         <img
-          src={""}
+          src={
+            `https://drive.google.com/uc?export=view&id=${imageSix?.image_src}` ||
+            defaultImage
+          }
           className="hero___headerImage--imagesSix"
-          alt="imagesSix"
+          alt={imageSix?.image_alt}
         />
       </div>
     </header>
