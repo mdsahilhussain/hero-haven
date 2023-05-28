@@ -13,7 +13,7 @@ const CompanyPartner = () => {
       <div className="companyPartner___container">
         {companyPartnerLogo.map(
           (item: iCompanyCompanyPartnerPartner, index: number) => (
-            <div key={index} className="companyPartner___container--logo">
+            <div key={index} className="companyPartner___container--logo" >
               <img
                 src={`https://drive.google.com/uc?export=view&id=${item.companyLogoUrl}`}
                 alt={item.companyName}

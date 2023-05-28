@@ -13,7 +13,7 @@ export const Button = (props: buttonProps) => {
 export const CommunityButton = (props: communityButtonProps) => {
   const { title } = props;
   return (
-    <button className="communityButton  btn">
+    <button className="communityButton btn">
       {title}
       <span className="icon-right"></span>
       <span className="icon-right after"></span>

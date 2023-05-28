@@ -1,4 +1,8 @@
 /* inspired form gumroad website */
+button {
+  cursor: pointer;
+}
+
 .primaryButton {
   color: var(--tertiary-color);
   border: 1px solid var(--secondary-color);
@@ -60,7 +64,6 @@
 }
 
 .communityButton:hover {
-  cursor: pointer;
   color: transparent;
 }
 

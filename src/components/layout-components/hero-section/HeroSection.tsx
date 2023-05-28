@@ -6,17 +6,17 @@ import FreeimageDataList from "./heroImage.data.json";
 
 interface ImageData {
   _id: number;
-  image_src: string;
+  image_src: string | null;
   image_alt: string;
 }
 
 const HeroSection = () => {
-  const [imageOne, setImageOne] = useState<ImageData | any>();
-  const [imageTwo, setImageTwo] = useState<ImageData | any>();
-  const [imageThree, setImageThree] = useState<ImageData | any>();
-  const [imageFour, setImageFour] = useState<ImageData | any>();
-  const [imageFive, setImageFive] = useState<ImageData | any>();
-  const [imageSix, setImageSix] = useState<ImageData | any>();
+  const [imageOne, setImageOne] = useState<ImageData | any>(null);
+  const [imageTwo, setImageTwo] = useState<ImageData | any>(null);
+  const [imageThree, setImageThree] = useState<ImageData | any>(null);
+  const [imageFour, setImageFour] = useState<ImageData | any>(null);
+  const [imageFive, setImageFive] = useState<ImageData | any>(null);
+  const [imageSix, setImageSix] = useState<ImageData | any>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {

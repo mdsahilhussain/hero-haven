@@ -1,0 +1,51 @@
+[
+  {
+    "_id": 1,
+    "cardId": "cardOne",
+    "title": "Wide Range of Options",
+    "description": "Hero Haven offers a diverse collection of captivating hero sections for your website. You'll find a variety of styles, themes, and layouts to choose from.",
+    "image": "1o6aNp53ElmZhlkIJnlyYyBBslyb8K1CQ"
+  },
+  {
+    "_id": 2,
+    "cardId": "cardTwo",
+    "title": "High-Quality Designs",
+    "description": "All hero sections provided by Hero Haven are professionally-designed, ensuring a polished and visually appealing look for your website.",
+    "image": "1hSs0iKHisC5upIU9OYGOZuNf6af-yKJG"
+  },
+  {
+    "_id": 3,
+    "cardId": "cardThree",
+    "title": "Free of Cost",
+    "description": "Hero Haven is committed to providing these high-quality hero sections absolutely free of cost, allowing you to enhance your website without any financial burden.",
+    "image": "1PjHWEnWVmrNO1nDFc3FyRjYsB_9S6J_i"
+  },
+  {
+    "_id": 4,
+    "cardId": "cardFour",
+    "title": "Customizable Section",
+    "description": "Explore a diverse selection of fonts and images to perfectly embody your brand's personality. Ensure consistency by choosing colors that align with your brand's identity across your entire website.",
+    "image": "1izUHGBcPMGiVMazM-mo_4O5dGnsMbyVA"
+  },
+  {
+    "_id": 5,
+    "cardId": "cardFive",
+    "title": "Versatile Options",
+    "description": "Whether you're looking for a bold and dynamic hero image, a sleek and modern video background, or an interactive slider, Hero Haven has a wide variety of options to suit your needs.",
+    "image": "1efkeylgx5vGKkqGVqJ98sN-jNmQ3lrXb"
+  },
+  {
+    "_id": 6,
+    "cardId": "cardSix",
+    "title": "Enhanced User Engagement",
+    "description": "By utilizing the extraordinary hero sections from Hero Haven, you can captivate your visitors and significantly enhance user engagement on your website.",
+    "image": "1D5e7wrRxQKQ9vfcenQy28lUP_FI8lG_A"
+  },
+  {
+    "_id": 7,
+    "cardId": "cardSeven",
+    "title": "Boost Conversions",
+    "description": "The visually stunning hero sections provided by Hero Haven have the power to leave a lasting impact on your visitors, potentially increasing conversions and driving business growth.",
+    "image": "13bENgQ08-CuP9sM-l_EocoEP3AcCoy5F"
+  }
+]
