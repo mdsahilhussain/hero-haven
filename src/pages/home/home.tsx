@@ -1,12 +1,13 @@
 import React from "react";
-import { HeroSection } from "../../components";
+import { CompanyPartner, HeroSection } from "../../components";
 
-const home = () => {
+const Home = () => {
   return (
     <React.Fragment>
       <HeroSection />
+      <CompanyPartner />
     </React.Fragment>
   );
 };
 
-export default home;
+export default Home;

@@ -1,6 +1,11 @@
 import "./navbar.modules.css";
 import { Button } from "../../ui-components/button/Button";
-import { IoNotificationsSharp, IoNotificationsOutline } from "react-icons/io5";
+import {
+  IoNotificationsSharp,
+  IoNotificationsOutline,
+  IoPerson,
+  IoPersonOutline,
+} from "react-icons/io5";
 const Navbar = () => {
   const isMessage = true;
   return (
@@ -18,6 +23,7 @@ const Navbar = () => {
         ) : (
           <IoNotificationsSharp className="bell" />
         )}
+        <IoPersonOutline />
       </div>
     </nav>
   );

@@ -2,9 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "./hero.models.css";
 import { Button, CommunityButton } from "../../ui-components/button/Button";
-import FreeimageDataList from "./heroimage.data.json";
-
-import defaultImage from "../../../assets/image_4.jpg";
+import FreeimageDataList from "./heroImage.data.json";
 
 interface ImageData {
   _id: number;
@@ -72,28 +70,19 @@ const HeroSection = () => {
     <header className="hero">
       <div className="hero___headerImage">
         <img
-          src={
-            `https://drive.google.com/uc?export=view&id=${imageOne?.image_src}` ||
-            defaultImage
-          }
+          src={`https://drive.google.com/uc?export=view&id=${imageOne?.image_src}`}
           className="hero___headerImage--imagesOne"
           alt={imageOne?.image_alt}
         />
         <img
-          src={
-            `https://drive.google.com/uc?export=view&id=${imageTwo?.image_src}` ||
-            defaultImage
-          }
+          src={`https://drive.google.com/uc?export=view&id=${imageTwo?.image_src}`}
           className="hero___headerImage--imagesTwo"
           alt={imageTwo?.image_alt}
         />
         <div className="hero___headerImage--rectangleOne"></div>
         <div className="hero___headerImage--rectangleTwo"></div>
         <img
-          src={
-            `https://drive.google.com/uc?export=view&id=${imageThree?.image_src}` ||
-            defaultImage
-          }
+          src={`https://drive.google.com/uc?export=view&id=${imageThree?.image_src}`}
           className="hero___headerImage--imagesThree"
           alt={imageThree?.image_alt}
         />
@@ -118,28 +107,19 @@ const HeroSection = () => {
 
       <div className="hero___headerImage">
         <img
-          src={
-            `https://drive.google.com/uc?export=view&id=${imageFour?.image_src}` ||
-            defaultImage
-          }
+          src={`https://drive.google.com/uc?export=view&id=${imageFour?.image_src}`}
           className="hero___headerImage--imagesFour"
           alt={imageFour?.image_alt}
         />
         <img
-          src={
-            `https://drive.google.com/uc?export=view&id=${imageFive?.image_src}` ||
-            defaultImage
-          }
+          src={`https://drive.google.com/uc?export=view&id=${imageFive?.image_src}`}
           className="hero___headerImage--imagesFive"
           alt={imageFive?.image_alt}
         />
         <div className="hero___headerImage--rectangleThree"></div>
         <div className="hero___headerImage--rectangleFour"></div>
         <img
-          src={
-            `https://drive.google.com/uc?export=view&id=${imageSix?.image_src}` ||
-            defaultImage
-          }
+          src={`https://drive.google.com/uc?export=view&id=${imageSix?.image_src}`}
           className="hero___headerImage--imagesSix"
           alt={imageSix?.image_alt}
         />

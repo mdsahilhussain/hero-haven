@@ -63,6 +63,10 @@
 }
 
 .hero___headerImage img {
+  background-image: url("../../.././assets/image_13.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 16em;
   height: 9em;
   z-index: 9;

@@ -74,6 +74,10 @@ ul {
   position: relative;
 }
 
+section {
+  padding: 1em 2em;
+}
+
 .container {
   max-width: 1200px;
 }
