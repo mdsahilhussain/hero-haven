@@ -64,8 +64,6 @@ const HeroSection = () => {
     // Clean up the interval on unmount
     return () => clearInterval(interval);
   }, []);
-
-  console.log("imageOne", imageOne?.image_src);
   return (
     <header className="hero">
       <div className="hero___headerImage">
