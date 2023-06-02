@@ -1,9 +1,9 @@
-section.about {
+section.features {
   width: 100%;
   height: 100vh;
 }
 
-.about___banner {
+.features___banner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +11,7 @@ section.about {
   height: 50vh;
 }
 
-.about___content {
+.features___content {
   width: 700vw;
   height: 100vh;
 
@@ -20,7 +20,7 @@ section.about {
   justify-content: center;
 }
 
-.about___content--item {
+.features___content--item {
   margin-top: 3em;
 
   width: 100vw;
@@ -33,7 +33,7 @@ section.about {
   position: relative;
 }
 
-.about___content--item > img {
+.features___content--item > img {
   width: auto;
   height: 70%;
   position: absolute;
@@ -41,7 +41,7 @@ section.about {
   z-index: -1;
 }
 
-.about___content--item___detail {
+.features___content--item___detail {
   text-align: right;
   position: absolute;
   bottom: 15%;
@@ -49,6 +49,6 @@ section.about {
   width: 70%;
 }
 
-.about___content--item___detail > p {
+.features___content--item___detail > p {
   font-weight: 400;
 }

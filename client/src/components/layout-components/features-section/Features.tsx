@@ -1,27 +1,27 @@
-import React, { useLayoutEffect, useRef, useEffect } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import "./features.models.css";
+import featuresData from "./features.json";
+
 gsap.registerPlugin(ScrollTrigger);
-import "./about.models.css";
-import aboutData from "./aboutDetails.data.json";
 
-// interface ImageData {
-//   _id: number;
-//   cardId: string;
-//   title: string;
-//   description: string;
-//   image: string | null;
-// }
+interface itemType {
+  _id: number;
+  title: string | null;
+  description: string;
+  image: string | null;
+}
 
-const About = () => {
-  // const component = useRef<HTMLDivElement>();
-  // const slider = useRef<HTMLDivElement>();
+const Features = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const component = useRef<HTMLDivElement | any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const slider = useRef<HTMLDivElement | any>(null);
 
-  const component = useRef();
-  const slider = useRef();
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const panels = gsap.utils.toArray(".about___content--item");
+      const panels = gsap.utils.toArray(".features___content--item");
       gsap.to(panels, {
         xPercent: -100 * (panels.length - 1),
         ease: "none",
@@ -39,16 +39,16 @@ const About = () => {
   });
 
   return (
-    <section className="about" ref={component}>
-      <div className="about___banner">
+    <section className="features" ref={component}>
+      <div className="features___banner">
         <h3>
           Unleash the <span>Power</span> of Hero Haven
         </h3>
       </div>
-      <div className="about___content" ref={slider}>
-        {aboutData.map((item, index) => (
-          <div className="about___content--item" key={index}>
-            <div className="about___content--item___detail">
+      <div className="features___content" ref={slider}>
+        {featuresData.map((item: itemType, index: number) => (
+          <div className="features___content--item" key={index}>
+            <div className="features___content--item___detail">
               <h1>
                 <span>{item.title}</span>
               </h1>
@@ -61,9 +61,9 @@ const About = () => {
           </div>
         ))}
       </div>
-      <div style={{height:"100vh"}}></div>
+      <div style={{ height: "100vh" }}></div>
     </section>
   );
 };
 
-export default About;
+export default Features;

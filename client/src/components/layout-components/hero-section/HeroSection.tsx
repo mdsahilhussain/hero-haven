@@ -40,25 +40,33 @@ const HeroSection = () => {
         randomNum6,
       ] = generatedNumbers;
 
-      setImageOne(
-        FreeimageDataList?.filter((data) => data?._id === randomNum1)[0]
-      );
+      const imageMap = new Map();
 
-      setImageTwo(
-        FreeimageDataList?.filter((data) => data?._id === randomNum2)[0]
-      );
-      setImageThree(
-        FreeimageDataList?.filter((data) => data?._id === randomNum3)[0]
-      );
-      setImageFour(
-        FreeimageDataList?.filter((data) => data?._id === randomNum4)[0]
-      );
-      setImageFive(
-        FreeimageDataList?.filter((data) => data?._id === randomNum5)[0]
-      );
-      setImageSix(
-        FreeimageDataList?.filter((data) => data?._id === randomNum6)[0]
-      );
+      FreeimageDataList?.forEach((data) => {
+        const { _id } = data;
+
+        if (_id === randomNum1) {
+          imageMap.set("imageOne", data);
+        } else if (_id === randomNum2) {
+          imageMap.set("imageTwo", data);
+        } else if (_id === randomNum3) {
+          imageMap.set("imageThree", data);
+        } else if (_id === randomNum4) {
+          imageMap.set("imageFour", data);
+        } else if (_id === randomNum5) {
+          imageMap.set("imageFive", data);
+        } else if (_id === randomNum6) {
+          imageMap.set("imageSix", data);
+        }
+      });
+
+      // Access the images using the map keys
+      setImageOne(imageMap.get("imageOne"));
+      setImageTwo(imageMap.get("imageTwo"));
+      setImageThree(imageMap.get("imageThree"));
+      setImageFour(imageMap.get("imageFour"));
+      setImageFive(imageMap.get("imageFive"));
+      setImageSix(imageMap.get("imageSix"));
     }, 2000);
 
     // Clean up the interval on unmount

@@ -1,12 +1,18 @@
 import React from "react";
-import { About, CompanyPartner, HeroSection } from "../../components";
+import {
+  Features,
+  CompanyPartner,
+  HeroSection,
+  TopContributor,
+} from "../../components";
 
 const Home = () => {
   return (
     <React.Fragment>
       <HeroSection />
       <CompanyPartner />
-      <About />
+      <TopContributor />
+      <Features />
     </React.Fragment>
   );
 };
