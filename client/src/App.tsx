@@ -1,17 +1,24 @@
 import React from "react";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+// import all components 
 import { Home } from "./pages";
 import { Navbar } from "./components";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+]);
+
 function App() {
   return (
-    <React.Fragment>
+    <main>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </React.Fragment>
+      <RouterProvider router={router}></RouterProvider>
+    </main>
   );
 }
 

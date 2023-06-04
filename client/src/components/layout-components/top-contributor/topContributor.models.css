@@ -4,7 +4,7 @@
   margin-top: 3rem;
 }
 
-.contributor > h1 {
+.contributor > h3 {
   text-align: center;
 }
 
@@ -76,30 +76,39 @@
   height: 100%;
 }
 
-.collage__1stPerson_Card > img,
-.collage___2ndPerson_Card > img,
-.collage___3rdPerson_Card > img,
-.collage___4thPerson_Card > img,
-.collage___5thPerson_Card > img {
+.contributor___container___right--collage__fistLine > div > img,
+.contributor___container___right--collage__secondLine > div > img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: 8px;
+
+  opacity: 70%;
 }
 
-.collage__1stPerson_Card:hover,
-.collage___2ndPerson_Card:hover,
-.collage___3rdPerson_Card:hover,
-.collage___4thPerson_Card:hover,
-.collage___5thPerson_Card:hover {
+.contributor___container___right--collage__fistLine > div:hover > img,
+.contributor___container___right--collage__secondLine > div:hover > img {
+  opacity: 100%;
+}
+
+.contributor___container___right--collage__fistLine > div:hover,
+.contributor___container___right--collage__secondLine > div:hover {
   cursor: pointer;
   scale: 1.2;
+  z-index: 9;
 }
 
-.collage__1stPerson_Card:active,
-.collage___2ndPerson_Card:active,
-.collage___3rdPerson_Card:active,
-.collage___4thPerson_Card:active,
-.collage___5thPerson_Card:active {
-  scale: 1.2;
+.contributor___container___right--collage__fistLine > div,
+.contributor___container___right--collage__secondLine > div {
+  position: relative;
+  background-color: var(--tertiary-color);
+}
+
+.contributor___container___right--collage__fistLine > div > h1,
+.contributor___container___right--collage__secondLine > div > h1 {
+  position: absolute;
+
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  left: 0;
+  bottom: 0;
 }
