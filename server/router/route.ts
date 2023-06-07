@@ -1,21 +1,24 @@
 import { Router } from "express";
 const router = Router();
 
+//? import all controllers 
+import * as controller from '../controllers/appControllers'
+
 //! Get Method
-router.route('/user/:username').get((req, res) => res.json('register route')) //user detail by username
-router.route('/generateOTP').get((req, res) => res.json('register route')) // generate random OTP
-router.route('/verifyOTP').get((req, res) => res.json('register route')) // verify generate OTP
-router.route('/createRestSession').get((req, res) => res.json('register route')) // rest all the variables
+router.route('/user/:username').get(controller.getUser) //user detail by username
+router.route('/generateOTP').get(controller.generateOTP) // generate random OTP
+router.route('/verifyOTP').get(controller.verifyOTP) // verify generate OTP
+router.route('/createRestSession').get(controller.createRestSession) // rest all the variables
 
 //! Post Method
-router.route('/register').post((req, res) => res.json('register route')) // register user
+router.route('/register').post(controller.register) // register user
 router.route('/registerMail').post((req, res) => res.json('register route')) // send the email
 router.route('/authenticate').post((req, res) => res.json('register route')) // authenticate user
-router.route('/login').post((req, res) => res.json('register route')) // login in app
+router.route('/login').post(controller.login) // login in app
 
 //! Put Method
-router.route('/updateUser').put((req, res) => res.json('register route')) //is use to update the user profile
-router.route('/restPassword').put((req, res) => res.json('register route')) // use to reset password
+router.route('/updateUser').put(controller.updateUser) //is use to update the user profile
+router.route('/restPassword').put(controller.resetPassword) // use to reset password
 
 //! Delete Method
 
