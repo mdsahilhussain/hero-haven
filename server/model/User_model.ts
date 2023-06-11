@@ -4,18 +4,18 @@ export interface IUser extends Document {
   username: string;
   password: string;
   email: string;
-  firstName?: string;
-  lastName?: string;
-  mobile?: number;
-  address?: string;
-  profileImage?: string;
+  firstName: string;
+  lastName: string;
+  mobile: number;
+  address: string;
+  profileImage: string;
 }
 
 export const UserSchema: Schema<IUser> = new mongoose.Schema({
   username: {
     type: String,
     required: [true, 'Please provide a username'],
-    unique: [true, 'Username already exists'],
+    unique: true,
   },
   password: {
     type: String,
@@ -36,3 +36,4 @@ export const UserSchema: Schema<IUser> = new mongoose.Schema({
 const User = mongoose.models.Users || mongoose.model<IUser>('User', UserSchema);
 
 export default User;
+
