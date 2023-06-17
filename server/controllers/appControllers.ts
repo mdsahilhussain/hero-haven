@@ -221,7 +221,25 @@ export async function createResetSession(req: Request, res: Response) {
   }
 }
 
-export async function resetPassword(req: Request, res: Response): Promise<void> {
-  // Reset the user's password
-  res.json('resetPassword router');
+export async function resetPassword(req: Request, res: Response) {
+  try {
+    const { username, password } = req.body;
+
+    if (!req.app.locals.resetSession) return res.status(440).send({ error: "Session expired!" })
+
+    const user = await UserModel.findOne({ username });
+    if (!user) {
+      return res.status(404).send({ error: 'Username not found!' });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    await UserModel.updateOne({ username: user.username }, { password: hashedPassword });
+    req.app.locals.resetSession = false;
+    res.status(201).send({ msg: 'Password Updated!' });
+  } catch (error) {
+    console.error('Error resetting password:', error);
+    res.status(500).send({ error: 'Internal Server Error' });
+  }
 }
+
