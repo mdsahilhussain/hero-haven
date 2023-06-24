@@ -36,21 +36,36 @@ interface RegisterRequest {
   json?: any;
 }
 
+/* //* POST: http://localhost:8080/api/register 
+ * @param : {
+  "username" : "example123",
+  "password" : "admin123",
+  "email": "example@gmail.com",
+  "firstName" : "bill",
+  "lastName": "william",
+  "mobile": 8009860560,
+  "address" : "Apt. 556, Kulas Light, Gwenborough",
+  "profile": ""
+}
+*/
 export async function register(req: Request, res: Response) {
   try {
     const requestBody: RegisterRequest = req.body;
     const { username, password, email, firstName, lastName, profileImage, mobile, address } = requestBody;
 
+    //! check the existing user
     const existingUsername = await UserModel.findOne({ username });
     if (existingUsername) {
       return res.status(400).send({ error: 'Username already exists' });
     }
 
+   //! check for existing email
     const existingEmail = await UserModel.findOne({ email });
     if (existingEmail) {
       return res.status(400).send({ error: 'Email already exists' });
     }
 
+    //! Convert normal password into hashedPassword
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = new UserModel({
       username,
@@ -77,6 +92,12 @@ interface LoginRequest {
   json?: any;
 }
 
+/* //* POST: http://localhost:8080/api/login 
+ * @param: {
+  "username" : "example123",
+  "password" : "admin123"
+}
+*/
 export async function login(req: Request, res: Response) {
   try {
     const requestBody: LoginRequest = req.body;
@@ -97,6 +118,7 @@ export async function login(req: Request, res: Response) {
       return res.status(500).send({ error: 'JWT secret not configured' });
     }
 
+    //! create jwt token
     const token = jwt.sign(
       {
         userId: user._id,
@@ -117,6 +139,7 @@ export async function login(req: Request, res: Response) {
   }
 }
 
+/* //* GET: http://localhost:8080/api/user/example123 */
 export async function getUser(req: Request, res: Response) {
   try {
     const { username } = req.params;
@@ -146,6 +169,16 @@ interface UpdateUserRequest {
   [key: string]: any;
 }
 
+/* //* PUT: http://localhost:8080/api/updateuser 
+ * @param: {
+  "header" : "<token>"
+}
+body: {
+    firstName: '',
+    address : '',
+    profile : ''
+}
+*/
 export async function updateUser(req: Request, res: Response) {
   try {
     const { userId } = res.locals.user;
@@ -169,6 +202,7 @@ export async function updateUser(req: Request, res: Response) {
   }
 }
 
+/* //* GET: http://localhost:8080/api/generateOTP */
 export async function generateOTP(req: Request, res: Response) {
   try {
     // Generate OTP
@@ -189,6 +223,7 @@ export async function generateOTP(req: Request, res: Response) {
   }
 }
 
+/* //* GET: http://localhost:8080/api/verifyOTP */
 export async function verifyOTP(req: Request, res: Response) {
   try {
     const { code } = req.query;
@@ -207,6 +242,8 @@ export async function verifyOTP(req: Request, res: Response) {
   }
 }
 
+//! successfully redirect user when OTP is valid
+/* //* GET: http://localhost:8080/api/createResetSession */
 export async function createResetSession(req: Request, res: Response) {
   try {
     if (req.app.locals.resetSession) {
@@ -221,6 +258,8 @@ export async function createResetSession(req: Request, res: Response) {
   }
 }
 
+//! update the password when we have valid session
+/* //* PUT: http://localhost:8080/api/resetPassword */
 export async function resetPassword(req: Request, res: Response) {
   try {
     const { username, password } = req.body;

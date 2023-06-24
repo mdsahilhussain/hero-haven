@@ -28,13 +28,13 @@ app.get('/', (req: any, res: any) => {
 app.use('/api', router);
 
 //! start server only when valid connection
-connect().then(() => {
-    try {
-        app.listen(port, () => {
-            console.log(`Example app listening at http://localhost:${port}`);
-        });
-    } catch (error) {
-        console.log("Cannot connect to the server")
-    }
-}).catch(error => console.log("Invalid database connect"))
+connect()
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`Example app listening at http://localhost:${port}`);
+    });
+  })
+  .catch(error => {
+    console.error("Cannot connect to the server");
+  });
 
