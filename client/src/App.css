@@ -75,6 +75,11 @@ h3>span {
   font-family: "Kaushan Script", cursive;
 }
 
+h5{
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
 h6 {
   font-size: 0.8rem;
   font-weight: 400;
