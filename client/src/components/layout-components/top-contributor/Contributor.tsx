@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./topContributor.models.css";
 import profileImage from "../../../assets/contributer_profileImage.jpg";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import contributorData from "./contributers.data.json";
 const TopContributor = () => {
   useEffect(() => {
@@ -33,7 +34,14 @@ const TopContributor = () => {
             </div>
             <div className="contributor___container___ranker--card__stage">
               <div className="top"></div>
-              <div className="front front4"></div>
+              <div className="front front4">
+                <span>
+                  <FaLinkedinIn />
+                </span>
+                <span>
+                  <FaGithub />
+                </span>
+              </div>
             </div>
           </div>
           <div
@@ -50,7 +58,14 @@ const TopContributor = () => {
             </div>
             <div className="contributor___container___ranker--card__stage">
               <div className="top"></div>
-              <div className="front front2"></div>
+              <div className="front front2">
+                <span>
+                  <FaLinkedinIn />
+                </span>
+                <span>
+                  <FaGithub />
+                </span>
+              </div>
             </div>
           </div>
           <div className="contributor___container___ranker--card card1">
@@ -61,7 +76,12 @@ const TopContributor = () => {
             </div>
             <div className="contributor___container___ranker--card__stage">
               <div className="top"></div>
-              <div className="front front1"></div>
+              <div className="front front1"><span>
+                  <FaLinkedinIn />
+                </span>
+                <span>
+                  <FaGithub />
+                </span></div>
             </div>
           </div>
           <div
@@ -78,7 +98,14 @@ const TopContributor = () => {
             </div>
             <div className="contributor___container___ranker--card__stage">
               <div className="top"></div>
-              <div className="front front3"></div>
+              <div className="front front3">
+                <span>
+                  <FaLinkedinIn />
+                </span>
+                <span>
+                  <FaGithub />
+                </span>
+              </div>
             </div>
           </div>
           <div
@@ -94,19 +121,22 @@ const TopContributor = () => {
               <h5>Sahil Hussain</h5>
             </div>
             <div className="contributor___container___ranker--card__stage">
-                
               <div className="top"></div>
               <div className="front front5">
-                sahil husa
+                <span>
+                  <FaLinkedinIn />
+                </span>
+                <span>
+                  <FaGithub />
+                </span>
               </div>
             </div>
           </div>
         </div>
-        <div >
-        <h1>sahil</h1>
+        <div>
+          <h1>sahil</h1>
+        </div>
       </div>
-      </div>
-      
     </section>
   );
 };
