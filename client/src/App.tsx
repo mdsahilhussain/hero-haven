@@ -1,23 +1,25 @@
-import React from "react";
+import { useState } from "react";
 import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
-// import all components 
-import { Home } from "./pages";
+// import all components
+import { Home, LoginSingUp } from "./pages";
 import { Navbar } from "./components";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-]);
-
 function App() {
+  const [isNavbarShow, setIsNavbarShow] = useState(true);
+
   return (
     <main>
-      <Navbar />
-      <RouterProvider router={router}></RouterProvider>
+      {isNavbarShow && <Navbar />}
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/user"
+          element={<LoginSingUp setIsNavbarShow={setIsNavbarShow} />}
+        />
+      </Routes>
     </main>
   );
 }

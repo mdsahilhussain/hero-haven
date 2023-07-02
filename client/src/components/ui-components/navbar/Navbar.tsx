@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import "./navbar.modules.css";
 import { Button } from "../../ui-components/button/Button";
 import {
@@ -6,10 +7,11 @@ import {
   IoPerson,
   IoPersonOutline,
 } from "react-icons/io5";
+
 const Navbar = () => {
   const isMessage = true;
   return (
-    <nav>
+    <nav className="glassmorphism">
       <img src="" alt="logo-image" />
       <ul>
         <li>About</li>
@@ -17,7 +19,7 @@ const Navbar = () => {
         <li>Contributor</li>
       </ul>
       <div className="nav___button--controller">
-        <Button title="Explore" />
+        <Button title="Explore" style={{}} />
         {isMessage ? (
           <IoNotificationsOutline className="bell" />
         ) : (

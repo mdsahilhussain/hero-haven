@@ -54,10 +54,10 @@ h2 {
   font-weight: 600;
 }
 
-h2>span {
+h2 > span {
   font-size: 2.5rem;
   font-weight: 600;
-  
+
   color: var(--primary-color);
   font-family: "Kaushan Script", cursive;
 }
@@ -67,15 +67,15 @@ h3 {
   font-weight: 400;
 }
 
-h3>span {
-  font-size: 2.5rem;
+h3 > span {
+  font-size: 2rem;
   font-weight: 500;
-  
+
   color: var(--primary-color);
   font-family: "Kaushan Script", cursive;
 }
 
-h5{
+h5 {
   font-weight: 800;
   font-size: 0.8rem;
 }
@@ -92,16 +92,19 @@ p {
 
 nav {
   padding: 1em 2em;
-  background: rgba(255, 255, 255, 0.2);
-  -webkit-backdrop-filter: blur(13px);
-  backdrop-filter: blur(25px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
 
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 99;
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 ul {

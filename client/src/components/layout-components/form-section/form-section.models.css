@@ -1,0 +1,87 @@
+section.from {
+  width: 100%;
+  height: fit-content;
+}
+section.from h6 {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+label {
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+  font-weight: 800;
+}
+
+input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  flex-grow: 1;
+}
+
+input::placeholder {
+  font-size: 0.9em;
+  color: var(--secondary-color);
+}
+
+.input-div {
+  margin-bottom: 0.2em;
+  width: 100%;
+  background-color: transparent;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.6em 0.5em;
+  border: 1px solid var(--primary-color);
+
+  background-color: var(--quaternary-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 5px;
+  margin-top: 0.2em;
+}
+
+.input___flexField {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  background-color: transparent;
+}
+
+.input___flexField > div:first-child {
+  margin-right: 0.5em;
+}
+
+.errorMsg {
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: red;
+}
+
+.from___or {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.from___or hr {
+  width: 100%;
+}
+
+.from___or > h6 {
+  padding: 0 0.5em;
+  font-size: 1em;
+}
+
+.from___otherAccount {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -106,7 +106,7 @@ const HeroSection = () => {
           online experience now!
         </h6>
         <div className="hero___headerTitle--buttonController">
-          <Button title="Explore" />
+          <Button title="Explore" style={{}} />
           <CommunityButton title="Community" />
         </div>
       </div>
