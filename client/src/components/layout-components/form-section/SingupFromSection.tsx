@@ -1,28 +1,57 @@
-import React from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./form-section.models.css";
 import * as Yup from "yup";
 import { Button } from "../../../components";
 import { Link } from "react-router-dom";
+import { BsGoogle, BsGithub } from "react-icons/bs";
+import {
+  AiFillEye,
+  AiFillEyeInvisible,
+  AiFillQuestionCircle,
+} from "react-icons/ai";
 
 // Validation schema using Yup
 const validationSchema = Yup.object().shape({
-  userName: Yup.string().required("User name is required"),
+  userName: Yup.string()
+    .required("User name is required")
+    .matches(/^\S*$/, "User name should not contain spaces"),
   firstName: Yup.string().required("First name is required"),
   lastName: Yup.string().required("Last name is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
   password: Yup.string()
     .required("Password is required")
-    .min(8, "Password must be at least 8 characters"),
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+      "Password must contain at least 8 characters, one symbol, one number, and one capital letter"
+    ),
   confirmPassword: Yup.string()
     .required("Confirm Password is required")
     .oneOf([Yup.ref("password")], "Passwords must match"),
 });
 
 const SingUpFromSection: React.FC = () => {
+  const [confirmPasswordType, setConfirmPasswordType] =
+    useState<string>("password");
+
+  const [passwordType, setPasswordType] = useState<string>("password");
   const handleSubmit = (values: any) => {
     // Handle form submission
     console.log(values);
+  };
+
+  const onChangePasswordType = (value: string) => {
+    if (value == "password") {
+      setPasswordType(passwordType == "password" ? "text" : "password");
+      return;
+    }
+    if (value == "confirmPassword") {
+      setConfirmPasswordType(
+        confirmPasswordType == "password" ? "text" : "password"
+      );
+      return;
+    }
   };
 
   return (
@@ -45,7 +74,23 @@ const SingUpFromSection: React.FC = () => {
       >
         <Form>
           <div className="input-div">
-            <label htmlFor="email">User Name</label>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "flex-end",
+                justifyContent: "space-between",
+              }}
+            >
+              <label htmlFor="password">
+                User Name <span className="required">*</span>
+              </label>
+              <div className="tooltip">
+                <AiFillQuestionCircle style={{ marginBottom: "-2px" }} />
+                <span className="tooltipText glassmorphism">
+                  <h6>User name should not contain spaces.</h6>
+                </span>
+              </div>
+            </div>
             <div className="input-field">
               <Field
                 type="text"
@@ -63,7 +108,10 @@ const SingUpFromSection: React.FC = () => {
 
           <div className="input___flexField">
             <div className="input-div">
-              <label htmlFor="name">First Name</label>
+              <label htmlFor="name">
+                First Name <span className="required">*</span>
+              </label>
+
               <div className="input-field">
                 <Field
                   type="text"
@@ -79,7 +127,9 @@ const SingUpFromSection: React.FC = () => {
               />
             </div>
             <div className="input-div">
-              <label htmlFor="name">Last Name</label>
+              <label htmlFor="name">
+                Last Name <span className="required">*</span>
+              </label>
               <div className="input-field">
                 <Field
                   type="text"
@@ -97,7 +147,10 @@ const SingUpFromSection: React.FC = () => {
           </div>
 
           <div className="input-div">
-            <label htmlFor="email">Email Address</label>
+            <label htmlFor="email">
+              Email Address <span className="required">*</span>
+            </label>
+
             <div className="input-field">
               <Field
                 type="email"
@@ -111,14 +164,44 @@ const SingUpFromSection: React.FC = () => {
 
           <div className="input___flexField">
             <div className="input-div">
-              <label htmlFor="password">Password</label>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "flex-end",
+                  justifyContent: "space-between",
+                }}
+              >
+                <label htmlFor="password">
+                  Password <span className="required">*</span>
+                </label>
+                <div className="tooltip">
+                  <AiFillQuestionCircle style={{ marginBottom: "-2px" }} />
+                  <span className="tooltipText glassmorphism">
+                    <h6>Password must be at least 8 characters long.</h6>
+                    <h6>Password must contain at least one symbol.</h6>
+                    <h6>Password must contain at least one number .</h6>
+                    <h6>Password must contain at least one capital letter .</h6>
+                  </span>
+                </div>
+              </div>
+
               <div className="input-field">
                 <Field
-                  type="password"
+                  type={passwordType}
                   id="password"
                   name="password"
                   placeholder="Enter your password"
                 />
+                <span
+                  className="password_icon"
+                  onClick={() => onChangePasswordType("password")}
+                >
+                  {passwordType == "text" ? (
+                    <AiFillEye />
+                  ) : (
+                    <AiFillEyeInvisible />
+                  )}
+                </span>
               </div>
               <ErrorMessage
                 name="password"
@@ -128,14 +211,27 @@ const SingUpFromSection: React.FC = () => {
             </div>
 
             <div className="input-div">
-              <label htmlFor="confirmPassword">Confirm Password</label>
+              <label htmlFor="confirmPassword">
+                Confirm Password <span className="required">*</span>
+              </label>
+
               <div className="input-field">
                 <Field
-                  type="password"
+                  type={confirmPasswordType}
                   id="confirmPassword"
                   name="confirmPassword"
                   placeholder="Enter your confirm password"
                 />
+                <span
+                  className="password_icon"
+                  onClick={() => onChangePasswordType("confirmPassword")}
+                >
+                  {confirmPasswordType == "text" ? (
+                    <AiFillEye />
+                  ) : (
+                    <AiFillEyeInvisible />
+                  )}
+                </span>
               </div>
               <ErrorMessage
                 name="confirmPassword"
@@ -155,12 +251,12 @@ const SingUpFromSection: React.FC = () => {
         <h6>or</h6> <hr />
       </div>
       <div className="from___otherAccount">
-        <Button title="Google" style={{ width: "48%" }} />
-        <Button title="GitHub" style={{ width: "48%" }} />
+        <Button title="Google" icon={<BsGoogle />} style={{ width: "48%" }} />
+        <Button title="GitHub" icon={<BsGithub />} style={{ width: "48%" }} />
       </div>
       <h6 className="link">
         Already have an Account?
-        <Link to="">Log in</Link>
+        <Link to="/login">Log in</Link>
       </h6>
     </section>
   );

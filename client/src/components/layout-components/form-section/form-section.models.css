@@ -26,7 +26,7 @@ input::placeholder {
 }
 
 .input-div {
-  margin-bottom: 0.2em;
+  margin-bottom: 0.6em;
   width: 100%;
   background-color: transparent;
 }
@@ -56,6 +56,10 @@ input::placeholder {
 
 .input___flexField > div:first-child {
   margin-right: 0.5em;
+}
+
+.password_icon {
+  color: var(--secondary-color);
 }
 
 .errorMsg {

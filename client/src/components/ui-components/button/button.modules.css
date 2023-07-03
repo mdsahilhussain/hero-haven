@@ -10,6 +10,10 @@ button {
   padding: 0.8em 2em;
   background: var(--secondary-color);
   transition: 0.2s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .primaryButton:hover {

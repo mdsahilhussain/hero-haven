@@ -32,6 +32,11 @@
   justify-self: center;
 }
 
+.required {
+  color: red;
+  font-size: 1rem;
+}
+
 .from__banner {
   width: 100%;
   height: fit-content;
@@ -55,6 +60,9 @@
   padding: 0em 1.5em 0em 0.3em;
   background-color: var(--secondary-color);
   margin-bottom: 0.2em;
+}
+
+.from__banner--detail h1 span {
   color: var(--tertiary-color);
 }
 

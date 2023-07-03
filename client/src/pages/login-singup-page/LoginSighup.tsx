@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useEffect } from "react";
-import { SingUpFromSection } from "../../components";
+import { useEffect } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import { SingUpFromSection, LoginFormSection } from "../../components";
 import "./login-singUp.modules.css";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 interface iProps {
@@ -8,12 +9,13 @@ interface iProps {
 }
 const LoginSighup = (props: iProps) => {
   const { setIsNavbarShow } = props;
-
+  const navigate = useNavigate();
   useEffect(() => {
     setIsNavbarShow(false);
   }, []);
 
   const handleBack = () => {
+    navigate("/");
     setIsNavbarShow(true);
   };
   return (
@@ -23,7 +25,10 @@ const LoginSighup = (props: iProps) => {
         className="from___back--icon"
       />
       <div className="login_sighup___from--fromSection">
-        <SingUpFromSection />
+        <Routes>
+          <Route path="register" element={<SingUpFromSection />} />
+          <Route path="login" element={<LoginFormSection />} />
+        </Routes>
       </div>
       <div className="login_sighup___from--banner">
         <div className="from__banner">

@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
-          path="/user"
+          path="/*"
           element={<LoginSingUp setIsNavbarShow={setIsNavbarShow} />}
         />
       </Routes>

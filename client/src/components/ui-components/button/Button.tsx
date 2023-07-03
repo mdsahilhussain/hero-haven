@@ -4,14 +4,18 @@ import "./button.modules.css";
 interface buttonProps {
   title: string;
   style: any;
+  icon?: any;
 }
 interface communityButtonProps {
   title: string;
 }
 export const Button = (props: buttonProps) => {
-  const { title, style } = props;
+  const { title, style, icon } = props;
   return (
     <button className="primaryButton" style={{ ...style }}>
+      <span style={icon ? { marginRight: "0.5em" } : { display: "none" }}>
+        {icon}
+      </span>{" "}
       {title}
     </button>
   );
