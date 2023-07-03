@@ -62,6 +62,7 @@ input::placeholder {
   font-size: 0.6rem;
   font-weight: 400;
   color: red;
+  margin-top: 0.4em;
 }
 
 .from___or {
@@ -84,4 +85,14 @@ input::placeholder {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  margin-bottom: 1em;
+}
+
+.link a {
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 800;
+  color: blue;
+  margin-left: 0.5em;
 }

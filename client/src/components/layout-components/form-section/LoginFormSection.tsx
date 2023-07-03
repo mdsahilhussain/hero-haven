@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./form-section.models.css";
 import * as Yup from "yup";
 import { Button } from "../../../components";
+import { Link } from "react-router-dom";
 
 // Validation schema using Yup
 const validationSchema = Yup.object().shape({
@@ -81,6 +82,10 @@ const LoginFormSection: React.FC = () => {
         <Button title="Google" style={{ width: "48%" }} />
         <Button title="GitHub" style={{ width: "48%" }} />
       </div>
+      <h6 className="link">
+        Don't have Account?
+        <Link to="">Sing Up</Link>
+      </h6>
     </section>
   );
 };

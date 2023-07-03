@@ -158,9 +158,9 @@ const SingUpFromSection: React.FC = () => {
         <Button title="Google" style={{ width: "48%" }} />
         <Button title="GitHub" style={{ width: "48%" }} />
       </div>
-      <h6>
-        Don't have Account?
-        <Link to=""></Link>
+      <h6 className="link">
+        Already have an Account?
+        <Link to="">Log in</Link>
       </h6>
     </section>
   );
