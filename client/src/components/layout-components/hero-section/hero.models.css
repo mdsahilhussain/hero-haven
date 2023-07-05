@@ -133,6 +133,11 @@
   line-height: 2;
 }
 
+.hero___headerTitle--buttonController {
+  display: flex;
+  align-items: center;
+}
+
 .hero___headerTitle--buttonController :first-child {
   margin-right: 1em;
 }

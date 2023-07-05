@@ -9,6 +9,7 @@ interface buttonProps {
 interface communityButtonProps {
   title: string;
 }
+
 export const Button = (props: buttonProps) => {
   const { title, style, icon } = props;
   return (

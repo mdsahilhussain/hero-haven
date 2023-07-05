@@ -59,7 +59,7 @@ const SingUpFromSection: React.FC = () => {
       <h3>
         Join the <span> Hero Haven</span> Community
       </h3>
-      <h6>Enter your credentials to access your account </h6>
+      <h6>Enter your credentials to access your account. </h6>
       <Formik
         initialValues={{
           userName: "",
@@ -179,8 +179,8 @@ const SingUpFromSection: React.FC = () => {
                   <span className="tooltipText glassmorphism">
                     <h6>Password must be at least 8 characters long.</h6>
                     <h6>Password must contain at least one symbol.</h6>
-                    <h6>Password must contain at least one number .</h6>
-                    <h6>Password must contain at least one capital letter .</h6>
+                    <h6>Password must contain at least one number.</h6>
+                    <h6>Password must contain at least one capital letter. </h6>
                   </span>
                 </div>
               </div>

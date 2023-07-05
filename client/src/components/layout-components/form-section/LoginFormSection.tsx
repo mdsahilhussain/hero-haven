@@ -33,7 +33,7 @@ const LoginFormSection: React.FC = () => {
       <h3>
         Welcome to <span> Hero Haven</span> Community
       </h3>
-      <h6>Unlock an Exceptional Website Experience</h6>
+      <h6>Unlock an Exceptional Website Experience.</h6>
       <Formik
         initialValues={{
           userName: "",
@@ -93,7 +93,7 @@ const LoginFormSection: React.FC = () => {
           </div>
 
           <div style={{ marginTop: "1.5em" }}>
-            <Button title="Log IN" style={{ width: "100%" }} />
+            <Button title="Log In" style={{ width: "100%" }} />
           </div>
         </Form>
       </Formik>

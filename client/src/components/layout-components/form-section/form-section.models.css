@@ -46,6 +46,12 @@ input::placeholder {
   margin-top: 0.2em;
 }
 
+.input-field > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .input___flexField {
   display: flex;
   align-items: center;

@@ -12,11 +12,11 @@ const LoginSighup = (props: iProps) => {
   const navigate = useNavigate();
   useEffect(() => {
     setIsNavbarShow(false);
-  }, []);
+  }, [setIsNavbarShow]);
 
   const handleBack = () => {
-    navigate("/");
     setIsNavbarShow(true);
+    navigate("/");
   };
   return (
     <section className="login_sighup___from">

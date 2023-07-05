@@ -3,7 +3,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 
 // import all components
-import { Home, LoginSingUp } from "./pages";
+import { ExplorePage, Home, LoginSingUp } from "./pages";
 import { Navbar } from "./components";
 
 function App() {
@@ -18,6 +18,10 @@ function App() {
         <Route
           path="/*"
           element={<LoginSingUp setIsNavbarShow={setIsNavbarShow} />}
+        />
+        <Route
+          path="/search"
+          element={<ExplorePage setIsNavbarShow={setIsNavbarShow} />}
         />
       </Routes>
     </main>
