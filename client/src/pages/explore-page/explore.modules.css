@@ -1,0 +1,18 @@
+section.explore__filter {
+  background-color: var(--tertiary-color);
+  border-bottom: 1px solid #f2f2f2;
+
+  width: 100%;
+  height: 20vh;
+
+  position: relative;
+}
+
+.explore__filter___container {
+  position: absolute;
+  left: 0;
+  bottom: 0.2em;
+
+  width: 100%;
+  height: fit-content;
+}

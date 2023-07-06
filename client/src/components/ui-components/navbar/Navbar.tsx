@@ -58,7 +58,7 @@ export const ExploreNavbar = (props: iProps) => {
     navigate("/");
   };
   return (
-    <nav className="glassmorphism">
+    <nav className="nav___explore">
       <img
         src=""
         alt="logo-image"

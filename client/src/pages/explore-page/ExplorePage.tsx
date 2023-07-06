@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect } from "react";
-import { ExploreNavbar } from "../../components";
-
+import { ExploreNavbar, FilterSection } from "../../components";
+import "./explore.modules.css";
 interface iProps {
   setIsNavbarShow: any;
 }
@@ -14,9 +14,11 @@ const ExplorePage = (props: iProps) => {
   return (
     <React.Fragment>
       <ExploreNavbar setIsNavbarShow={setIsNavbarShow} />
-      <div
-        style={{ backgroundColor: "#bfdbf7", width: "100%", height: "20vh" }}
-      ></div>
+      <section className="explore__filter">
+        <div className="explore__filter___container">
+          <FilterSection />
+        </div>
+      </section>
     </React.Fragment>
   );
 };

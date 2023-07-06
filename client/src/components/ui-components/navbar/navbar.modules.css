@@ -39,14 +39,24 @@ nav > ul > li:last-child {
   padding: 0.3em 0.5em;
   width: 30vw;
   border-radius: 5px;
-  background: #ffffff;
-  box-shadow: inset 14px 14px 28px #f0f0f0, inset -14px -14px 28px #ffffff;
+  background-color: var(--quaternary-color);
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  color: var(--secondary-color);
 }
 
-.nav___button--controller___input-field > svg{
+.nav___button--controller___input-field > svg {
   font-size: 1.2rem;
+}
+
+.nav___button--controller___input-field > svg:first-child {
+  margin-right: 0.5em;
+}
+
+.nav___explore {
+  background-color: var(--tertiary-color);
+  border-bottom: 1px solid #f2f2f2;
 }
