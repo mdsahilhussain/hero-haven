@@ -1,0 +1,53 @@
+.drop_down___container {
+  width: 100%;
+  min-width: fit-content;
+}
+
+.drop_down___container > label {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.drop_down--div {
+  background-color: var(--quaternary-color);
+
+  margin-top: 0.2em;
+  padding-right: 0.4em;
+
+  border-radius: 5px;
+}
+
+.drop_down {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url("../../../assets/downArrow.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 0.8rem;
+
+  padding-right: 1.2em;
+
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+}
+
+select {
+  padding: 0.5em 1.5em 0.5em 0.5em;
+  background-color: transparent;
+}
+
+select > span {
+  background-color: red;
+}
+
+select:focus {
+  background-image: url("../../../assets/upArrow.png");
+}
+
+.drop_down option {
+  background-color: var(--tertiary-color);
+}

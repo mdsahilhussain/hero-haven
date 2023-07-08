@@ -1,6 +1,7 @@
 export { Navbar, ExploreNavbar } from './ui-components/navbar/Navbar.tsx'
 export { default as Filter } from './ui-components/filter-drop-down/Filter.tsx';
 export { Button, CommunityButton } from './ui-components/button/Button.tsx'
+export { default as Card } from './ui-components/card/CardComponent.tsx'
 
 export { default as HeroSection } from './layout-components/hero-section/HeroSection.tsx'
 export { default as CompanyPartner } from './layout-components/company-partner-section/CompanyPartner.tsx'

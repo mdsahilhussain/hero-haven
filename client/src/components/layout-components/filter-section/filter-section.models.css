@@ -6,12 +6,7 @@ section.filter {
   justify-content: space-between;
 }
 
-.filter___container--dropDown {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+.filter___container--dropDown,
 .filter___container--sortingDropDown {
   display: flex;
   align-items: center;
