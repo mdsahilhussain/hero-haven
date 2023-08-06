@@ -4,7 +4,7 @@
 }
 
 .drop_down___container > label {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 400;
 }
 
@@ -35,6 +35,7 @@
   cursor: pointer;
 }
 
+
 select {
   padding: 0.5em 1.5em 0.5em 0.5em;
   background-color: transparent;
@@ -42,10 +43,6 @@ select {
 
 select > span {
   background-color: red;
-}
-
-select:focus {
-  background-image: url("../../../assets/upArrow.png");
 }
 
 .drop_down option {
