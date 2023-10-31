@@ -5,6 +5,7 @@ interface buttonProps {
   title: string;
   style: any;
   icon?: any;
+  type?: string
 }
 interface communityButtonProps {
   title: string;
@@ -13,10 +14,10 @@ interface communityButtonProps {
 export const Button = (props: buttonProps) => {
   const { title, style, icon } = props;
   return (
-    <button className="primaryButton" style={{ ...style }}>
+    <button type="submit" className="primaryButton" style={{ ...style }}>
       <span style={icon ? { marginRight: "0.5em" } : { display: "none" }}>
         {icon}
-      </span>{" "}
+      </span>
       {title}
     </button>
   );

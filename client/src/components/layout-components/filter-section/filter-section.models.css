@@ -1,5 +1,6 @@
 section.filter {
   width: 100%;
+  height: fit-content !important;
 
   display: flex;
   align-items: center;

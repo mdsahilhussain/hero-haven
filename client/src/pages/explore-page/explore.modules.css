@@ -1,21 +1,3 @@
-section.explore___filter {
-  background-color: var(--tertiary-color);
-  border-bottom: 1px solid #f2f2f2;
-
-  width: 100%;
-  height: 24vh;
-  position: fixed;
-  z-index: 9;
-}
-
-.explore___filter___container {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: fit-content;
-}
-
 .explore___list {
   position: absolute;
   top: 24vh;

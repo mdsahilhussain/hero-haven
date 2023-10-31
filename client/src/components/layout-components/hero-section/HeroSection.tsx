@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./hero.models.css";
 import { Button, CommunityButton } from "../../ui-components/button/Button";
 import FreeimageDataList from "./heroImage.data.json";
+import { Link } from "react-router-dom";
 
 interface ImageData {
   _id: number;
@@ -106,7 +107,7 @@ const HeroSection = () => {
           online experience now!
         </h6>
         <div className="hero___headerTitle--buttonController">
-          <Button title="Explore" style={{}} />
+          <Link to="/search"><Button title="Explore" style={{fontSize:".9rem"}} /></Link>
           <CommunityButton title="Community" />
         </div>
       </div>

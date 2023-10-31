@@ -1,11 +1,7 @@
-const express = require('express')
-const cors = require('cors')
-const morgan = require('morgan')
+import express from 'express'
+import cors from 'cors'
+import morgan from 'morgan'
 import * as dotenv from 'dotenv'
-
-// import express from "express";
-// import cors from "cors";
-// import morgan from "morgan";
 
 dotenv.config()
 const app = express();
@@ -33,7 +29,7 @@ app.use('/api', router);
     try {
       connectDB(process.env.ATLAS_URL)
       app.listen(port, () =>
-        console.log(`Example app listening at http://localhost:${port}`)
+        console.log(`Example apps listening at http://localhost:${port}`)
       );
     } catch (error) {
       console.log(error);
@@ -42,14 +38,3 @@ app.use('/api', router);
   };
   
   startServer()
-
-
-// connectDB(process.env.ATLAS_URL)
-//   .then(() => {
-//     app.listen(port, () => {
-//       console.log(`Example app listening at http://localhost:${port}`);
-//     });
-//   })
-//   .catch(error => {
-//     console.error("Cannot connect to the server");
-//   });

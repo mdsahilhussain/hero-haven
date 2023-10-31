@@ -1,11 +1,11 @@
-import mongoose from "mongoose";
+const mongoose = require('mongoose');
 
 const connectDB = (url: any) => {
     mongoose.set("strictQuery", true);
     mongoose
-        .connect(url)
+        .connect(url,{ useNewUrlParser: true, useUnifiedTopology: true })
         .then(() => console.log("MongoDB connected"))
-        .catch((err) => console.log(err));
+        .catch((err: any) => console.log(err));
 };
 
 export default connectDB;

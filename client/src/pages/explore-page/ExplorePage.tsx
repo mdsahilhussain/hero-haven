@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from "react";
-import { Card, ExploreNavbar, FilterSection } from "../../components";
+import { Card, ExploreNavbar} from "../../components";
 import "./explore.modules.css";
 interface iProps {
   setIsNavbarShow: any;
@@ -17,12 +17,7 @@ const ExplorePage = (props: iProps) => {
 
   return (
     <React.Fragment>
-      <ExploreNavbar setIsNavbarShow={setIsNavbarShow} />
-      <section className="explore___filter">
-        <div className="explore___filter___container">
-          <FilterSection setFilterData={setFilterData} />
-        </div>
-      </section>
+      <ExploreNavbar setIsNavbarShow={setIsNavbarShow} setFilterData={setFilterData}/>
       <section className="explore___list">
         <Card />
         <Card />

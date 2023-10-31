@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import "./form-section.models.css";
 import * as Yup from "yup";
 import { Button } from "../../../components";
 import { Link } from "react-router-dom";
@@ -11,10 +10,14 @@ import {
   AiFillEyeInvisible,
   AiFillQuestionCircle,
 } from "react-icons/ai";
+import { useAxios } from "../../../hooks/useAxios";
+import { useToast, Spinner } from "@chakra-ui/react";
+
+import "./form-section.models.css";
 
 // Validation schema using Yup
 const validationSchema = Yup.object().shape({
-  userName: Yup.string()
+  username: Yup.string()
     .required("User name is required")
     .matches(/^\S*$/, "User name should not contain spaces"),
   firstName: Yup.string().required("First name is required"),
@@ -31,14 +34,61 @@ const validationSchema = Yup.object().shape({
     .oneOf([Yup.ref("password")], "Passwords must match"),
 });
 
+type ErrorObject = {
+  error: string;
+};
+
+type ResponseObject = {
+  msg: string;
+};
+
 const SingUpFromSection: React.FC = () => {
   const [confirmPasswordType, setConfirmPasswordType] =
     useState<string>("password");
-
   const [passwordType, setPasswordType] = useState<string>("password");
+
+  const toast = useToast();
+
+  const { response, loading, error, request } = useAxios();
   const handleSubmit = (values: any) => {
     // Handle form submission
-    console.log(values);
+    const { username, firstName, lastName, email, confirmPassword } = values;
+    const payload = {
+      username,
+      firstName,
+      lastName,
+      email,
+      password: confirmPassword,
+    };
+    request({
+      method: "POST",
+      url: "/api/register ",
+      headers: {
+        // no need to stringify
+        accept: "*/*",
+      },
+      data: payload,
+    });
+
+    if (error) {
+      toast({
+        title: "Error",
+        description: (error as ErrorObject)?.error,
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+
+    if (response) {
+      toast({
+        title: "Error",
+        description: (error as ErrorObject)?.error,
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+    }
   };
 
   const onChangePasswordType = (value: string) => {
@@ -62,7 +112,7 @@ const SingUpFromSection: React.FC = () => {
       <h6>Enter your credentials to access your account. </h6>
       <Formik
         initialValues={{
-          userName: "",
+          username: "",
           firstName: "",
           lastName: "",
           email: "",
@@ -94,13 +144,13 @@ const SingUpFromSection: React.FC = () => {
             <div className="input-field">
               <Field
                 type="text"
-                id="userName"
-                name="userName"
+                id="username"
+                name="username"
                 placeholder="Enter your user name"
               />
             </div>
             <ErrorMessage
-              name="userName"
+              name="username"
               component="div"
               className="errorMsg"
             />
@@ -242,13 +292,12 @@ const SingUpFromSection: React.FC = () => {
           </div>
 
           <div style={{ marginTop: "1em" }}>
-            <Button title="Sing Up" style={{ width: "100%" }} />
+            <Button type="submit" icon={loading && <Spinner color="white" />} title={loading?"":"Sing Up"} style={{ width: "100%" }} />
           </div>
         </Form>
       </Formik>
       <div className="from___or">
-        <hr />
-        <h6>or</h6> <hr />
+        <hr /> <h6>or</h6> <hr />
       </div>
       <div className="from___otherAccount">
         <Button title="Google" icon={<BsGoogle />} style={{ width: "48%" }} />
